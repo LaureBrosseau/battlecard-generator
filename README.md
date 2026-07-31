@@ -33,7 +33,7 @@ So here's what you'll find in this repo: a repeatable structure, a ready-to-use 
 1. Gather raw data on your competitor: pricing page, G2/Capterra reviews, recent changelog or launch announcements, call notes where reps mentioned them, LinkedIn posts from their leadership..
 2. Paste that raw material into the prompt in [`prompt.md`](./prompt.md), along with your own product's positioning.
 3. Review and correct the AI output, never ship a battlecard you haven't fact-checked. AI helps accelerate the battlecard creation but you should always verify data before sharing it with sales reps.  
-4. Run it by sales before rolling it out. If a rep tells you they wouldn't say it word-for-word on a call, it needs revising.
+4. Once finalized, run it by a sales rep who knows well this specific competitor, they'll help validate the content and tell you if they'd phrase something differently on a call. If so, ask why, and revise your battlecard based on their answer.
 5. Set a recurring reminder (monthly, or triggered by a competitor product update) to refresh it, an outdated battlecard is worse than no battlecard.
 
 ## Why this approach
