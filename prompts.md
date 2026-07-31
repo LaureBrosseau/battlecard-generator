@@ -1,7 +1,7 @@
 
 # The Prompts
 
-In this file, you'll find **2 prompts**. The 1st one **generates the content of the battlecard** and the other **creates a HTML file** you can easily import in Canva or Notion.
+In this file, you'll find **2 prompts**. The 1st one **generates the content of the battle card** and the other **creates a HTML file** you can easily import in Canva or Notion.
 
 ---
 
@@ -10,9 +10,9 @@ In this file, you'll find **2 prompts**. The 1st one **generates the content of 
 Use the first prompt, then check thoroughly the content generated.  
 Fix inaccuracies if any and add/remove sections before generating the HTML file with the second prompt.
 
-## Prompt 1: Generate the battlecard content 
+## Prompt 1: Generate the battle card content 
 
-This is the prompt you can use to generate the content of the battlecard.
+This is the prompt you can use to generate the content of the battle card.
 
 1. Copy everything below into Claude or ChatGPT (or any other model of your choice).
 2. Fill in the bracketed sections with your own raw data, and run it.
@@ -21,7 +21,7 @@ This is the prompt you can use to generate the content of the battlecard.
 ---
 
 ```
-You are helping me build a competitive battlecard for my sales team, following a specific framework. Do not invent facts, pricing, or customer proof points — if something isn't in the material I give you, write "[NEEDS VERIFICATION]" instead of guessing.
+You are helping me build a competitive battle card for my sales team, following a specific framework. Do not invent facts, pricing, or customer proof points — if something isn't in the material I give you, write "[NEEDS VERIFICATION]" instead of guessing.
 
 ## My product
 [Paste: 2-3 sentences on what your product does, your category claim, and your primary buyer persona]
@@ -53,23 +53,23 @@ Tone: direct, factual, respectful of the competitor. No marketing fluff, no unfa
 End with a short "Gaps to fill" list of anything you marked [NEEDS VERIFICATION], so I know exactly what to go research next.
 ```
 
-Once your battlecard content is created (using the prompt above), verify its content, pay also attention to content labelled "[NEEDS VERIFICATION]".  
+Once your battle card content is created (using the prompt above), verify its content, pay also attention to content labelled "[NEEDS VERIFICATION]".  
 Remove all content you cannot fact-check. You do not want to share with Sales false or inaccurate data.
 
 Then once the content is ready, use the second prompt below. 
 
 ## Prompt 2: Turning your content into the HTML one-pager
 
-This prompt will format your battlecard content into a printable HTML template (battlecard-template.html). This content can be used on Canva or Notion.
+This prompt will format your battle card content into a printable HTML template (battlecard-template.html). This content can be used on Canva or Notion.
 
 Here's the prompt:
 
 ```
-I have a battlecard content (pasted below) and an HTML template (also pasted below). Fill the template with my content, keeping the HTML structure, CSS and layout exactly as they are — don't redesign anything, just replace the placeholder content with mine.
+I have a battle card content (pasted below) and an HTML template (also pasted below). Fill the template with my content, keeping the HTML structure, CSS and layout exactly as they are — don't redesign anything, just replace the placeholder content with mine.
 
 If my content doesn't fit a section cleanly (too long, missing information, extra information the template has no place for), tell me instead of forcing it in or cutting it silently.
 
-## My battlecard content
+## My battle card content
 [Paste your finished, fact-checked battlecard here]
 
 ## The HTML template
@@ -86,7 +86,7 @@ Open it in a browser to check it before sharing, or if you'd rather work in a vi
 
 ## Tips for better output
 
-- **The quality of the battlecard depends on the quality of your raw data.** Ten minutes on G2 reading actual customer complaints beats an hour of the model guessing from a category description.
+- **The quality of the battle card depends on the quality of your raw data.** Ten minutes on G2 reading actual customer complaints beats an hour of the model guessing from a category description.
 - **Include call notes if you have any.** Real objections your reps have already heard are more valuable than anything on the competitor's own website.
-- **Re-run it when something changes** — a pricing update, a new feature launch, a funding round. Paste the new information into the same prompt structure rather than starting from scratch.
-- **Never skip the fact-check step.** The instruction to flag gaps helps, but models can still be confidently wrong about specifics like exact pricing tiers — verify anything a rep will say as fact.
+- **Re-run it when something changes**: a pricing update, a new feature launch, a funding round. Paste the new information into the same prompt structure rather than starting from scratch.
+- **Never skip the fact-check step.** The instruction to flag gaps helps, but models can still be confidently wrong about specifics like exact pricing tiers, verify anything a rep will say as fact.
