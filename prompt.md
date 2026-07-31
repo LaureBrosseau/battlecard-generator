@@ -1,9 +1,14 @@
-# Foreword
 
-In this file, you'll find 2 prompts. One to generate the content of the battlecard and the other to create a HTML file you can easily import in Canva or Notion.
-I advise you to check first the content of the battlecard, fix inaccuracies if any, add/remove content needed, before generating the HTML file.
+# What you'll find here
 
-# Prompt 1: Generate the battlecard content 
+In this file, you'll find **2 prompts**. The 1st one **generates the content of the battlecard** and the other **creates a HTML file** you can easily import in Canva or Notion.
+
+## How to proceed
+
+Use the first prompt, then check thoroughly the content generated.  
+Fix inaccuracies if any and add/remove sections before generating the HTML file with the second prompt.
+
+## Prompt 1: Generate the battlecard content 
 
 This is the prompt you can use to generate the content of the battlecard.
 
@@ -46,7 +51,7 @@ Tone: direct, factual, respectful of the competitor. No marketing fluff, no unfa
 End with a short "Gaps to fill" list of anything you marked [NEEDS VERIFICATION], so I know exactly what to go research next.
 ```
 
-# Prompt 2: Turning your content into the HTML one-pager
+## Prompt 2: Turning your content into the HTML one-pager
 
 Once your battlecard content is drafted (using the prompt above) **and fact-checked**, use this second prompt to format it into a printable HTML template (battlecard-template.html). First verify the content thoroughly before generating the HTML template. Make sure content is trustful before it gets locked into a visual layout.  
 Remove any content still labelled "[NEEDS VERIFICATION]" if you can't fact-check it — never hand Sales false or inaccurate data.  
