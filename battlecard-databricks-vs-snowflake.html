@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Battlecard — Shopify vs. BigCommerce</title>
+<title>Battlecard — Databricks vs. Snowflake</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -207,23 +207,23 @@
 
   <header>
     <div class="header-row1">
-      <h1>Shopify <span class="vs">vs.</span> <span class="them">BigCommerce</span></h1>
+      <h1>Databricks <span class="vs">vs.</span> <span class="them">Snowflake</span></h1>
       <button class="print-btn" onclick="window.print()">Print / Save PDF (A4 landscape)</button>
     </div>
     <div class="header-row2">
       <div class="company-meta">
         <div class="col us-label">
-          <strong>Shopify</strong>
-          Ottawa, Canada &middot; founded 2006 &middot; public (NYSE)
+          <strong>Databricks</strong>
+          San Francisco, USA &middot; founded 2013 &middot; private (~$134B valuation, Dec 2025)
         </div>
         <div class="col them-label">
-          <strong>BigCommerce</strong>
-          Austin, USA &middot; founded 2009 &middot; private (Apax/GIC, Nov 2024)
+          <strong>Snowflake</strong>
+          Menlo Park, USA &middot; founded 2012 &middot; public (NYSE: SNOW)
         </div>
       </div>
       <div class="legend">
-        <span><span class="dot us"></span> Advantage: Shopify</span>
-        <span><span class="dot them"></span> Advantage: BigCommerce</span>
+        <span><span class="dot us"></span> Advantage: Databricks</span>
+        <span><span class="dot them"></span> Advantage: Snowflake</span>
       </div>
     </div>
   </header>
@@ -231,15 +231,15 @@
   <div class="snapshot">
     <div class="item neutral">
       <span class="eyebrow">Who they are</span>
-      <p>A hosted e-commerce platform built for fast, DTC-first launches, with the largest app and theme ecosystem in the category.</p>
+      <p>A cloud data warehouse built for governed SQL analytics and data sharing across clouds.</p>
     </div>
     <div class="item them">
       <span class="eyebrow">Why they win</span>
-      <p>Merchants scaling complex B2B or hybrid B2B/B2C operations with large, variant-heavy catalogs, or wanting to avoid Shopify's GMV-based plan structure.</p>
+      <p>Teams whose primary need is standard BI/analytics dashboards, wanting the simplest, most predictable SQL-only experience with strong concurrency.</p>
     </div>
     <div class="item us">
       <span class="eyebrow">Why we win</span>
-      <p>DTC-first brands who value the largest app ecosystem, fastest time-to-launch, and Shopify Payments' integrated checkout.</p>
+      <p>Teams running complex ETL, data engineering, or building custom ML/AI models who want one governed platform end-to-end instead of stitching two systems together.</p>
     </div>
   </div>
 
@@ -248,41 +248,40 @@
       <div class="block">
         <p class="eyebrow-h">Positioning</p>
         <table>
-          <tr><th></th><th>Shopify</th><th>BigCommerce</th></tr>
-          <tr><td>Category claim</td><td>Category-leading commerce platform</td><td>"Open SaaS" for complex commerce</td></tr>
-          <tr><td>Primary buyer</td><td>DTC brands, all sizes</td><td>Mid-market &amp; B2B-heavy enterprise</td></tr>
-          <tr><td>Core promise</td><td>Launch fast, scale with the largest ecosystem</td><td>Handle complex B2B/catalog needs without enterprise fees</td></tr>
+          <tr><th></th><th>Databricks</th><th>Snowflake</th></tr>
+          <tr><td>Category claim</td><td>Data Intelligence Platform &mdash; open lakehouse for data + AI</td><td>AI Data Cloud &mdash; governed SQL analytics &amp; data sharing</td></tr>
+          <tr><td>Primary buyer</td><td>Data engineering, ML/AI teams</td><td>BI/analytics teams</td></tr>
+          <tr><td>Core promise</td><td>One open platform from raw data to AI agents</td><td>Fast, simple, governed SQL analytics</td></tr>
         </table>
       </div>
 
       <div class="block">
         <p class="eyebrow-h">Pricing (as of mid-2026)</p>
         <table>
-          <tr><th>Tier</th><th>Shopify</th><th>BigCommerce</th></tr>
-          <tr><td>Entry</td><td>$19&ndash;27/mo</td><td>$29&ndash;39/mo</td></tr>
-          <tr><td>Plus / Enterprise</td><td>~$2,300/mo (3-yr term)</td><td class="them">~$1,500&ndash;1,750/mo</td></tr>
-          <tr><td>Growth model</td><td>Transaction fees off-platform gateway</td><td>Revenue (GMV) caps force upgrades</td></tr>
+          <tr><th>Model</th><th>Databricks</th><th>Snowflake</th></tr>
+          <tr><td>Unit</td><td>DBU ($0.22&ndash;0.70/unit) + cloud infra billed separately</td><td>Compute credit ($2&ndash;4/credit) + storage ($23/TB/mo)</td></tr>
+          <tr><td>Growth model</td><td>Dual billing, harder to estimate total cost</td><td>Cost climbs fast if warehouses run continuously</td></tr>
         </table>
-        <div class="pricing-note">Both platforms reworked pricing in 2026 and are now close in headline cost. BigCommerce's GMV caps were tightened in June 2026 &mdash; a real switching trigger to probe for.</div>
+        <div class="pricing-note">Snowflake publishes a clear per-credit price by edition ($2/credit for Standard, AWS US East). Databricks doesn't publish a single headline price &mdash; it directs you to a detailed SKU price list by product, cloud, and region. This structural difference makes any "X vs Y per year" comparison found online an estimate, not an official figure &mdash; always confirm both directly before quoting a number.</div>
       </div>
 
       <div class="block">
         <p class="eyebrow-h">Where they win / where you win</p>
-        <div class="segment us">
-          <strong>Shopify wins</strong>
-          <span>DTC-first, wants the largest app/theme ecosystem, fast launch.</span>
-        </div>
         <div class="segment them">
-          <strong>BigCommerce wins</strong>
-          <span>Primary business is B2B/wholesale, large complex catalogs (600+ SKU variants), wants to avoid GMV-tied plan upgrades.</span>
+          <strong>Snowflake wins</strong>
+          <span>Standard BI/reporting teams wanting the simplest SQL-only experience, less technical org, predictable governance needs.</span>
+        </div>
+        <div class="segment us">
+          <strong>Databricks wins</strong>
+          <span>Complex ETL/data engineering, ML/AI model development, teams wanting one platform across data and AI instead of two.</span>
         </div>
       </div>
 
       <div class="block">
         <p class="eyebrow-h">Company &amp; funding context</p>
         <div class="segment">
-          <strong>BigCommerce</strong>
-          <span>Taken private by Apax Partners &amp; GIC (Nov 2024, ~$1.8B). June 2026: GMV caps tightened 40&ndash;44%, new payment provider fee added &mdash; a real switching trigger, and a sign of pressure to protect margin post-buyout.</span>
+          <strong>Snowflake</strong>
+          <span>Public since its 2020 IPO; posted a net loss of ~&minus;$1.33B in FY2026 (audited). Databricks' self-reported ARR (~$5.4B, Jan 2026) has overtaken Snowflake's audited FY2026 revenue (~$4.68B) &mdash; not a perfectly like-for-like comparison, but a real reversal from 2023 worth naming if a prospect assumes Snowflake is the safer/bigger choice.</span>
         </div>
       </div>
     </div>
@@ -291,35 +290,35 @@
       <div class="block">
         <p class="eyebrow-h">Capability comparison</p>
         <table>
-          <tr><th>Capability</th><th>Shopify</th><th>BigCommerce</th></tr>
-          <tr><td>Max SKU variants/product</td><td>100</td><td class="them">600</td></tr>
-          <tr><td>Native B2B (quotes, price lists)</td><td>Improved on Plus (2024+)</td><td class="them">Deeper, native since inception</td></tr>
-          <tr><td>App/theme ecosystem</td><td class="us">~8,000 apps, largest in category</td><td>Smaller marketplace</td></tr>
-          <tr><td>Native multichannel selling</td><td class="us">Google, Meta, Amazon, TikTok</td><td>Native Google/Meta discontinued Mar 2026</td></tr>
-          <tr><td>Headless framework</td><td>Hydrogen (Remix)</td><td>Catalyst (Next.js, open-source)</td></tr>
+          <tr><th>Capability</th><th>Databricks</th><th>Snowflake</th></tr>
+          <tr><td>ML/AI model development</td><td class="us">Native, Gartner Leader 4 yrs running</td><td>Cortex AI newer, inference-focused</td></tr>
+          <tr><td>Complex ETL/data engineering</td><td class="us">Native (Spark, Delta Live Tables)</td><td>Snowpark, not a true distributed Spark runtime</td></tr>
+          <tr><td>Standard BI/SQL concurrency</td><td>Closing gap with Photon/serverless</td><td class="them">Edge on concurrent multi-user BI queries</td></tr>
+          <tr><td>Governance scope</td><td class="us">Unity Catalog: data + ML + AI assets</td><td>Strong for BI/compliance-driven analytics</td></tr>
+          <tr><td>Open table format</td><td>Native Delta + Iceberg support</td><td>Iceberg support added 2025+</td></tr>
         </table>
       </div>
 
       <div class="block">
         <p class="eyebrow-h">Proof points &amp; quotes</p>
         <div class="quote">
-          <p>Shopify: 4.4/5 across 5,006 reviews. BigCommerce: 4.2/5 across 574 reviews.</p>
-          <span class="source">&mdash; G2.com, "Compare BigCommerce and Shopify", checked 31 Jul 2026</span>
+          <p>"Databricks has a slight edge in overall user satisfaction, particularly in data lake analytics and collaboration."</p>
+          <span class="source">&mdash; G2.com, "Compare Databricks Data Intelligence Platform vs. Snowflake", checked 31 Jul 2026</span>
         </div>
         <div class="quote">
-          <p>"Shopify excels in user experience, with many praising its intuitive interface."</p>
-          <span class="source">&mdash; G2 AI-generated review summary (aggregated from verified user reviews), checked 31 Jul 2026</span>
+          <p>Databricks' self-reported ARR reached ~$5.4B (Jan 2026), ahead of Snowflake's audited FY2026 revenue of ~$4.68B &mdash; a reversal from 2023, though the two figures aren't measured the same way (private ARR vs. public GAAP revenue).</p>
+          <span class="source">&mdash; Wikipedia (Databricks, Snowflake company infoboxes, sourced to company disclosures), checked 31 Jul 2026</span>
         </div>
         <div class="quote">
-          <p>Independent testing found Shopify's onboarding polished and its admin dashboard cleaner &mdash; a first-impression edge in head-to-head testing.</p>
-          <span class="source">&mdash; ToolStackReview, "Shopify vs BigCommerce 2026", 18 May 2026</span>
+          <p>Vendor benchmark: Databricks reports running 2.8x faster than Snowflake Gen2 on ETL, at ~3.4x better price/performance.</p>
+          <span class="source">&mdash; Databricks.com, "Databricks vs. Snowflake" (vendor-published &mdash; verify independently before using on a call)</span>
         </div>
       </div>
 
       <div class="block">
         <p class="eyebrow-h">Customer references (public)</p>
-        <div class="proof"><strong>Shopify Plus</strong>: Gymshark, Allbirds, Heinz.</div>
-        <div class="proof"><strong>BigCommerce</strong>: publicly cited B2B/wholesale switchers in their own case studies &mdash; verify current names before use.</div>
+        <div class="proof"><strong>Databricks</strong>: Mastercard, adidas, OpenAI, Novo Nordisk.</div>
+        <div class="proof"><strong>Snowflake</strong>: AT&amp;T, Sanofi, Booking.com.</div>
         <div class="placeholder">Recent wins / losses: add your own deal-level data here &mdash; not public information, don't invent it.</div>
       </div>
     </div>
@@ -328,34 +327,34 @@
       <div class="block">
         <p class="eyebrow-h">Questions to ask</p>
         <ul class="traps">
-          <li>Is wholesale/B2B a primary revenue stream, or a secondary add-on to DTC?</li>
-          <li>How many SKU variants does your largest product line need?</li>
-          <li>Are you using a payment gateway outside Shop Pay / Shopify Payments today?</li>
+          <li>How much of your roadmap involves custom ML model training or building AI agents, versus standard SQL reporting?</li>
+          <li>Do any of your pipelines need sub-second streaming latency?</li>
+          <li>How are you governing ML/AI assets today alongside your data governance?</li>
         </ul>
       </div>
 
       <div class="block">
         <p class="eyebrow-h">Objection handling</p>
         <div class="objection">
-          <p class="q">BigCommerce doesn't cap our revenue the way Shopify's plan tiers do.</p>
-          <p class="a">Worth checking their current GMV thresholds directly &mdash; they were tightened in June 2026, and orders outside their embedded gateway now carry an added fee. The "no cap" pitch isn't as clean as it used to be.</p>
+          <p class="q">Snowflake is faster for our BI dashboards.</p>
+          <p class="a">True for standard concurrent BI queries. Worth asking whether BI is the only workload, or if ML/data engineering also needs to run somewhere &mdash; that's usually where a second platform starts adding cost and complexity.</p>
         </div>
         <div class="objection">
-          <p class="q">We need deep native B2B and BigCommerce has it built in.</p>
-          <p class="a">Fair &mdash; if B2B is your primary business, that's a genuine BigCommerce strength. If it's a secondary channel alongside DTC, Shopify's B2B for All (shipped 2024) now covers most of that ground natively.</p>
+          <p class="q">Our analysts only know SQL, Snowflake feels simpler.</p>
+          <p class="a">Databricks SQL is now BI-optimized (serverless, Photon) &mdash; analysts can stay SQL-only, the platform doesn't force Python or Spark on anyone who doesn't need it.</p>
         </div>
         <div class="objection">
-          <p class="q">Their enterprise tier is cheaper than Shopify Plus.</p>
-          <p class="a">On headline price, sometimes &mdash; but compare total cost of ownership, not sticker price: app costs, gateway fees, and now BigCommerce's revenue-tied fee changes all move the real number.</p>
+          <p class="q">We've already invested in Snowflake's governance.</p>
+          <p class="a">Fair, and that's real switching cost. Worth asking if that governance already extends to ML models and AI agents, or just tables &mdash; that gap is usually where teams end up bolting on a second system.</p>
         </div>
       </div>
 
       <div class="block">
         <p class="eyebrow-h">Additional resources</p>
         <div class="resources-grid">
-          <a href="https://www.g2.com/compare/bigcommerce-vs-shopify" target="_blank" rel="noopener">G2 side-by-side reviews &rarr;</a>
-          <a href="https://www.shopify.com/pricing" target="_blank" rel="noopener">Official pricing: Shopify &rarr;</a>
-          <a href="https://www.bigcommerce.com/pricing/" target="_blank" rel="noopener">Official pricing: BigCommerce &rarr;</a>
+          <a href="https://www.g2.com/compare/databricks-vs-snowflake" target="_blank" rel="noopener">G2 side-by-side reviews &rarr;</a>
+          <a href="https://www.databricks.com/product/pricing" target="_blank" rel="noopener">Official pricing: Databricks &rarr;</a>
+          <a href="https://www.snowflake.com/pricing/" target="_blank" rel="noopener">Official pricing: Snowflake &rarr;</a>
         </div>
         <div class="placeholder" style="margin-top:5px;">Add your own: internal competitive intel folder, win/loss recordings, or a customer story doc.</div>
       </div>
@@ -367,6 +366,5 @@
     <span>Owner: <strong>Product Marketing</strong> &middot; Last updated: <strong>31 Jul 2026</strong> &middot; Next review: <strong>Oct 2026</strong></span>
   </footer>
 
-</div>
 </body>
 </html>
