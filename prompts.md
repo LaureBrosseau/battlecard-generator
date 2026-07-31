@@ -1,7 +1,6 @@
-
 # The Prompts
 
-In this file, you'll find **2 prompts**. The 1st one **generates the content of the battle card** and the other **creates a HTML file** you can easily import in Canva or Notion.
+In this file, you'll find **2 prompts**. The 1st one **generates the content of the battle card** and the second one **creates a HTML file** you can share as is or easily import in Canva or Notion.
 
 ---
 
@@ -27,6 +26,7 @@ You are helping me build a competitive battle card for my sales team, following 
 [Paste: 2-3 sentences on what your product does, your category claim, and your primary buyer persona]
 Notable customer references: [a few notable customer references that the sales rep could share with the prospect]
 Recent wins vs this competitor: [examples of recent wins against this specific competitor]
+Useful resources for sales (2-3 links reps could use during a deal — e.g. G2/Capterra comparison page, official pricing page, internal competitive intel folder, win/loss call recordings, a customer story doc): [Paste your links here]
 
 ## The competitor
 Name: [Competitor name]
@@ -36,17 +36,18 @@ Raw research (paste whatever you have: pricing page text, G2/Capterra review exc
 [Paste raw material here]
 
 ## Instructions
-Structure the battlecard using exactly these 9 sections:
+Structure the battle card using exactly these 10 sections:
 
 1. Snapshot: who they are (1 sentence), why they win in some scenarios (1 sentence, be honest), why they lose (1 sentence, be respectful, just fact)
-2. Company & funding context: only include if there's something here that can truly influence the conversation (recent funding, layoffs, acquisition, leadership change). If nothing interesting, write "Nothing notable."
+2. Company & funding context: only include if there's something here that can truly influence the conversation (recent funding, layoffs, acquisition, leadership change). This is about the competitor — I already know my own company's context, don't restate it. If nothing interesting, write "Nothing notable."
 3. Positioning comparison: a table (category claim, primary buyer, core promise, for them vs. me), plus one line naming the real stake: is this a category disagreement, a segment disagreement, or a straight feature fight?
 4. Pricing & packaging: entry price and what's actually included at that tier (not just the listed price, flag any traps in the tier limits), where their pricing model creates friction as the customer grows, where my model is genuinely better AND genuinely worse
 5. Capability comparison: pick only 4-6 capabilities that are both genuinely differentiated and likely to come up in real deals. Table format: capability / them / me / one-sentence "so what" for the buyer
 6. Where they win / where I win: segmented by use case or buyer persona, not by feature. Add a few customer references or recent wins if I've provided any.
 7. Objection handling: 3-5 real phrases a prospect would say, each with a short, honest response, not something that sounds scripted, a real answer a rep can say out loud without sounding defensive
-8. Trap-setting questions: discovery questions that surface their weak points naturally, without naming them
-9. Proof points: pull only what's actually in the material provided. Mark anything unproven as "[NEEDS VERIFICATION]" rather than inventing a stat or quote, an unproven claim used on a call can damage the sales rep's and company's credibility, not build it.
+8. Questions to ask (trap-setting questions): discovery questions that surface their weak points naturally, without naming them
+9. Proof points: pull only what's actually in the material provided. Every proof point needs a source AND a date — not just where it came from, but when it was checked, since reviews and data age fast. Mark anything unproven as "[NEEDS VERIFICATION]" rather than inventing a stat or quote, an unproven claim used on a call can damage the sales rep's and company's credibility, not build it.
+10. Additional resources: use the links I provided above. If I didn't provide any, suggest generic categories a rep could look for instead (G2/Capterra comparison, official pricing pages) without inventing specific URLs.
 
 Tone: direct, factual, respectful of the competitor. No marketing fluff, no unfair exaggeration of the competitor's weaknesses. A rep should be able to say any sentence in this out loud on a call without sounding either defensive or dishonest.
 
@@ -70,7 +71,7 @@ I have a battle card content (pasted below) and an HTML template (also pasted be
 If my content doesn't fit a section cleanly (too long, missing information, extra information the template has no place for), tell me instead of forcing it in or cutting it silently.
 
 ## My battle card content
-[Paste your finished, fact-checked battlecard here]
+[Paste your finished, fact-checked battle card here]
 
 ## The HTML template
 [Paste the full contents of battlecard-template.html here]
@@ -80,7 +81,6 @@ If my content doesn't fit a section cleanly (too long, missing information, extr
 **What to do with the output**: copy the generated HTML, paste it into a plain text editor, and save the file with a .html extension.   
 Open it in a browser to check it before sharing, or if you'd rather work in a visual editor, import it into Canva (upload the HTML file, Canva converts it into an editable design).  
 :warning: Complex CSS and external fonts don't always survive the import perfectly, so expect to nudge colors or spacing afterward. 
-
 
 ---
 
