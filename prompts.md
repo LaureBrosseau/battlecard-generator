@@ -1,7 +1,9 @@
 
-# What you'll find here
+# The Prompts
 
 In this file, you'll find **2 prompts**. The 1st one **generates the content of the battlecard** and the other **creates a HTML file** you can easily import in Canva or Notion.
+
+---
 
 ## How to proceed
 
