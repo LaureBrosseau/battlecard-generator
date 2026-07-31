@@ -1,6 +1,6 @@
 # Battlecard Generator
 
-This is a practical framework + AI prompt for turning raw competitive research into a sales-ready battlecard in a few minutes.
+Leverage this framework and AI prompts to turn raw competitive data into a sales-ready battlecard in a few minutes.
 
 ## Why battlecards matter
 
