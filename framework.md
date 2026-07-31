@@ -1,6 +1,6 @@
-# The Battlecard Framework
+# The Battle Card Framework
 
-A good battlecard answers one question: **"The prospect just mentioned [Competitor X], what do I say in the next 30 seconds?"**
+A good battle card answers one question: **"The prospect just mentioned [Competitor X], what do I say in the next 30 seconds?"**
 
 Everything below is built to answer that question. If a section doesn't help a sales rep in that key moment, don't take it.
 
@@ -69,7 +69,7 @@ If you don't have real proof points for a given claim, mark it as a gap rather t
 
 ## What good looks like
 
-- A rep can read the whole battlecard in **under 3 minutes**.
+- A rep can read the whole battle card in **under 3 minutes**.
 - Every claim is sourced, **nothing makes it into the final version without being verified.**
 - It gets updated when the competitor releases a major feature, changes pricing, or anything else significant changes. 
-- Sales opens and reads the battlecard before a call, and uses it during the call, which only happens if they trust it.
+- Sales opens and reads the battle card before a call, and uses it during the call, which only happens if they trust it.
