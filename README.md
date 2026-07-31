@@ -1,15 +1,18 @@
-# Battle card Generator
+# Battle Card Generator
 
-Leverage this framework and AI prompts to turn raw competitive data into a sales-ready battle card in a few minutes.
+It's not enough to know who you're up against, the rep on the call needs the right content in hand.  
 
-## Why battle cards matter
-
-Knowing who you're up against in a deal matters, but knowing isn't enough if the sales rep facing that competitor isn't equipped with the right content.
-
-You do not want Sales reps to lose deals to competitors because they didn't know how to respond or what to say when the competitor's name or arguments came up in a conversation with a prospect. 
+You do not want Sales to lose deals to competitors because they didn't know how to respond or what to say when the competitor's name or arguments came up in a conversation with a prospect. 
 
 That's exactly what battle cards are for. They turn competitive intelligence that usually exists somewhere, in a Product Marketing Manager's head, in a sales rep's memory of a tough prospect call, in an old Slack thread, but rarely anywhere a sales rep can actually access it live.
 
+**Leverage this framework and AI prompts to turn raw competitive data into a sales-ready battle card in a few minutes.**
+
+<p align="center"><br>
+<img src="./readme-screenshot.png" width="80%"> <br>
+<em>Example of a battle card created with this Battle card Generator<br>
+</em>
+</p>
 
 ## The problem
 
