@@ -51,15 +51,19 @@ Tone: direct, factual, respectful of the competitor. No marketing fluff, no unfa
 End with a short "Gaps to fill" list of anything you marked [NEEDS VERIFICATION], so I know exactly what to go research next.
 ```
 
+Once your battlecard content is created (using the prompt above), verify its content, pay also attention to content labelled "[NEEDS VERIFICATION]".  
+Remove all content you cannot fact-check. You do not want to share with Sales false or inaccurate data.
+
+Then once the content is ready, use the second prompt below. 
+
 ## Prompt 2: Turning your content into the HTML one-pager
 
-Once your battlecard content is drafted (using the prompt above) **and fact-checked**, use this second prompt to format it into a printable HTML template (battlecard-template.html). First verify the content thoroughly before generating the HTML template. Make sure content is trustful before it gets locked into a visual layout.  
-Remove any content still labelled "[NEEDS VERIFICATION]" if you can't fact-check it — never hand Sales false or inaccurate data.  
+This prompt will format your battlecard content into a printable HTML template (battlecard-template.html). This content can be used on Canva or Notion.
 
 Here's the prompt:
 
 ```
-I have a fact-checked battlecard (pasted below) and an HTML template (also pasted below). Fill the template with my content, keeping the HTML structure, CSS and layout exactly as they are — don't redesign anything, just replace the placeholder content with mine.
+I have a battlecard content (pasted below) and an HTML template (also pasted below). Fill the template with my content, keeping the HTML structure, CSS and layout exactly as they are — don't redesign anything, just replace the placeholder content with mine.
 
 If my content doesn't fit a section cleanly (too long, missing information, extra information the template has no place for), tell me instead of forcing it in or cutting it silently.
 
