@@ -1,4 +1,11 @@
-# Battlecard Generation Prompt
+# Foreword
+
+In this file, you'll find 2 prompts. One to generate the content of the battlecard and the other to create a HTML file you can easily import in Canva or Notion.
+I advise you to check first the content of the battlecard, fix inaccuracies if any, add/remove content needed, before generating the HTML file.
+
+# Prompt 1: Generate the battlecard content 
+
+This is the prompt you can use to generate the content of the battlecard.
 
 1. Copy everything below into Claude or ChatGPT (or any other model of your choice).
 2. Fill in the bracketed sections with your own raw data, and run it.
@@ -39,12 +46,36 @@ Tone: direct, factual, respectful of the competitor. No marketing fluff, no unfa
 End with a short "Gaps to fill" list of anything you marked [NEEDS VERIFICATION], so I know exactly what to go research next.
 ```
 
+# Prompt 2: Turning your content into the HTML one-pager
+
+Once your battlecard content is drafted (using the prompt above) **and fact-checked**, use this second prompt to format it into a printable HTML template (battlecard-template.html). First verify the content thoroughly before generating the HTML template. Make sure content is trustful before it gets locked into a visual layout.  
+Remove any content still labelled "[NEEDS VERIFICATION]" if you can't fact-check it — never hand Sales false or inaccurate data.  
+
+Here's the prompt:
+
+```
+I have a fact-checked battlecard (pasted below) and an HTML template (also pasted below). Fill the template with my content, keeping the HTML structure, CSS and layout exactly as they are — don't redesign anything, just replace the placeholder content with mine.
+
+If my content doesn't fit a section cleanly (too long, missing information, extra information the template has no place for), tell me instead of forcing it in or cutting it silently.
+
+## My battlecard content
+[Paste your finished, fact-checked battlecard here]
+
+## The HTML template
+[Paste the full contents of battlecard-template.html here]
+
+```
+
+**What to do with the output**: copy the generated HTML, paste it into a plain text editor, and save the file with a .html extension.   
+Open it in a browser to check it before sharing, or if you'd rather work in a visual editor, import it into Canva (upload the HTML file, Canva converts it into an editable design).  
+:warning: Complex CSS and external fonts don't always survive the import perfectly, so expect to nudge colors or spacing afterward. 
+
+
 ---
 
 ## Tips for better output
 
-- **The quality of the battlecard depends on the quality of your raw material.** Ten minutes on G2 reading actual customer complaints beats an hour of the model guessing from a category description.
+- **The quality of the battlecard depends on the quality of your raw data.** Ten minutes on G2 reading actual customer complaints beats an hour of the model guessing from a category description.
 - **Include call notes if you have any.** Real objections your reps have already heard are more valuable than anything on the competitor's own website.
 - **Re-run it when something changes** — a pricing update, a new feature launch, a funding round. Paste the new information into the same prompt structure rather than starting from scratch.
 - **Never skip the fact-check step.** The instruction to flag gaps helps, but models can still be confidently wrong about specifics like exact pricing tiers — verify anything a rep will say as fact.
-```
