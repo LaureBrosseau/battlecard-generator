@@ -78,9 +78,12 @@ If my content doesn't fit a section cleanly (too long, missing information, extr
 
 ```
 
-**What to do with the output**: copy the generated HTML, paste it into a plain text editor, and save the file with a .html extension.   
-Open it in a browser to check it before sharing, or if you'd rather work in a visual editor, import it into Canva (upload the HTML file, Canva converts it into an editable design).  
-:warning: Complex CSS and external fonts don't always survive the import perfectly, so expect to nudge colors or spacing afterward. 
+**What to do with the output**: copy the generated HTML, paste it into a plain text editor, and save the file with a .html extension.
+Open it in a browser to check it, or if you'd rather work in a visual editor, import it into Canva (upload the HTML file, Canva converts it into an editable design).
+
+:warning: Complex CSS and external fonts don't always survive the import perfectly, so expect to nudge colors or spacing afterward.
+
+Once you have the battle card formatted, check the content (if not done yet) and the colors (green/orange). They should be used only on cells that are a true advantage for that company, not on frictions, limitations, or random numbers. Models get this wrong often enough that it's worth a real look, not a glance.
 
 ---
 
