@@ -9,7 +9,7 @@ That's exactly what battle cards are for. They turn competitive intelligence tha
 **Leverage this framework and AI prompts to turn raw competitive data into a sales-ready battle card in a few minutes.**
 
 <p align="center"><br>
-<img src="./readme-screenshot.png" width="70%"> <br>
+<img src="./readme-screenshot.png" width="80%"> <br>
 <em>Example of a battle card created with the Battle card Generator<br>
 </em>
 </p>
