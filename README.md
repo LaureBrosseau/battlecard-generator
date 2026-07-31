@@ -28,8 +28,8 @@ So here's what you'll find in this repo: a repeatable structure, ready-to-use pr
 |---|---|
 | [`framework.md`](./framework.md) | The battle card structure itself, the 9 sections every battle card should have, and why |
 | [`prompts.md`](./prompts.md) | Two ready-to-use prompts for Claude/ChatGPT: 1st one turns raw research (pricing pages, reviews, call notes) into a battle card following my framework, 2nd one formats the battle card into a HTML template. |
-| [`example-filled-mid-market.md`](./example-filled.md) | Mid-market example (Shopify vs BigCommerce) |
-| [`example-filled-enterprise.md`](./example-filled-enterprise.md) | Enterprise example (Airflow vs Databricks) |
+| [`battlecard-shopify-vs-bigcommerce.html`](./battlecard-shopify-vs-bigcommerce.html) | Mid-market example (Shopify vs BigCommerce) |
+| [`battlecard-databricks-vs-snowflake.html`](./battlecard-databricks-vs-snowflake.html) | Enterprise example (Databricks vs Snowflake) |
 | [`battlecard-template.html`](./battlecard-template.html) | A printable one-pager format sales can keep open during a call. It's a plain HTML/CSS file, you can edit it freely: colors, layout, or content, in any text editor, or paste the file into Claude (or another AI assistant) and ask it to make the changes for you  |
 
 ## How to use it
