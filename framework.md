@@ -4,6 +4,8 @@ A good battle card answers one question: **"The prospect just mentioned [Competi
 
 Everything below is built to answer that question. If a section doesn't help a sales rep in that key moment, don't take it.
 
+**Color convention:** when a battle card is rendered visually (see [`battlecard-template.html`](./battlecard-template.html)), green color is used for anything that's an advantage for your company, and orange/red is used for anything that's an advantage for the competitor. Company names themselves stay neutral (black) in headers and labels, color is reserved for advantage, not for identifying who's who.
+
 ---
 
 ## 1. Snapshot
@@ -16,6 +18,8 @@ Three lines, no more:
 ## 2. Company & funding context
 
 Include this only if you have valuable information that can influence the conversation such as recent funding round (which could mean aggressive discounts ahead?), leadership departure, layoffs, being acquired. Skip this if it's just background noise.
+
+This section is about the competitor, not your own company — as a rep, you already know your own funding, leadership, and pricing history. No need to restate it here.
 
 ## 3. Positioning comparison
 
@@ -55,7 +59,7 @@ The actual phrases prospects use when they bring up this competitor, each with a
 > "[Competitor X] has [feature] and you don't." → [response]
 > "We're already using [Competitor X] for Y." → [response]
 
-## 8. Trap-setting questions
+## 8. Questions to ask (trap-setting questions)
 
 Discovery questions that surface the competitor's known weak points naturally, without ever naming them.  
 These should sound like normal discovery, not a trap, because it isn't one. It's just asking about something the prospect hasn't thought to check yet.
@@ -63,13 +67,18 @@ These should sound like normal discovery, not a trap, because it isn't one. It's
 ## 9. Proof points
 
 Customer stories, quotes from review sites like G2 or Capterra, analyst data or quotes, recent closed won deals data, benchmark data, anything a rep can point to as evidence rather than opinion.  
+Every proof point needs a **source and a date**, not just "sourced," but specifically where it came from and when it was checked. Data and reviews age fast; a proof point without a date can't be trusted to still be accurate.  
 If you don't have real proof points for a given claim, mark it as a gap rather than inventing one. An unproven claim used on a call can hurt you more than help you.
+
+## 10. Additional resources
+
+A short list of links a rep can go to for more depth than the card itself provides: G2/Capterra comparison pages, official pricing pages, an internal competitive intel folder, win/loss call recordings, or a customer story doc. Keep it to a handful of links, not a resource dump, the card should stay a 3-minute read, these are just the doors out of it for reps who want to go deeper.
 
 ---
 
 ## What good looks like
 
 - A rep can read the whole battle card in **under 3 minutes**.
-- Every claim is sourced, **nothing makes it into the final version without being verified.**
-- It gets updated when the competitor releases a major feature, changes pricing, or anything else significant changes. 
+- Every claim is sourced and dated, **nothing makes it into the final version without being verified.**
+- It gets updated when the competitor releases a major feature, changes pricing, or anything else significant changes.
 - Sales opens and reads the battle card before a call, and uses it during the call, which only happens if they trust it.
