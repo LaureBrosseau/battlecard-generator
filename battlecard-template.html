@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battlecard — [Your Company] vs. [Competitor]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7F5;
+    --card:#FFFFFF;
+    --ink:#14171A;
+    --ink-soft:#5B6169;
+    --us:#15803D;
+    --us-soft:#E7F4EC;
+    --them:#C2410C;
+    --them-soft:#FBEBE2;
+    --line:#E2E5E1;
+    --radius:10px;
+  }
+  *{ box-sizing:border-box; }
+  html, body{ height:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif; font-size:12.5px; line-height:1.4;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    width:100%; max-width:1500px; min-height:210mm; margin:0 auto;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; display:flex; flex-direction:column;
+  }
+  .tab{
+    display:inline-block; background:var(--ink); color:var(--paper);
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; padding:5px 16px 6px;
+    border-radius:8px 8px 0 0; margin-left:22px;
+  }
+  header{ padding:8px 20px 5px; }
+  .header-row1{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .header-row2{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:5px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif; font-size:22px; font-weight:700;
+    margin:2px 0 0; letter-spacing:-0.01em;
+  }
+  h1 .vs{ color:var(--ink-soft); font-weight:500; }
+  h1 .them{ color:var(--ink); }
+  .company-meta{ display:flex; gap:22px; }
+  .company-meta .col{ font-size:10px; font-family:'IBM Plex Mono', monospace; color:var(--ink-soft); }
+  .company-meta .col strong{ display:block; color:var(--ink); font-size:11px; margin-bottom:1px; font-family:'IBM Plex Sans', sans-serif; }
+  .company-meta .col.us-label strong{ color:var(--ink); }
+  .company-meta .col.them-label strong{ color:var(--ink); }
+  .print-btn{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600; letter-spacing:.04em;
+    text-transform:uppercase; background:var(--us); color:#fff; border:none;
+    padding:7px 12px; border-radius:6px; cursor:pointer;
+  }
+  .print-btn:hover{ opacity:.9; }
+  .legend{ display:flex; gap:12px; font-size:9.5px; font-family:'IBM Plex Mono', monospace; }
+  .legend span{ display:flex; align-items:center; gap:5px; }
+  .dot{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+  .dot.us{ background:var(--us); }
+  .dot.them{ background:var(--them); }
+  .snapshot{
+    margin:6px 20px 0; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:8px 0; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;
+  }
+  .snapshot .item{ padding:0 14px; position:relative; }
+  .snapshot .item + .item::before{
+    content:""; position:absolute; left:-5px; top:0; bottom:0; width:1px; background:var(--line);
+  }
+  .snapshot .item .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:9px; font-weight:600; letter-spacing:.08em;
+    text-transform:uppercase; margin-bottom:4px; display:block;
+  }
+  .snapshot .item.neutral .eyebrow{ color:var(--ink-soft); }
+  .snapshot .item.them .eyebrow{ color:var(--them); }
+  .snapshot .item.us .eyebrow{ color:var(--us); }
+  .snapshot .item p{ margin:0; font-size:11.5px; }
+
+  /* --- 3-column layout, each section is its own bordered block --- */
+  .body-grid{
+    flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;
+    margin:6px 20px 0;
+  }
+  .block{
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:8px 10px; margin-bottom:8px; background:var(--card);
+  }
+  .eyebrow-h{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 5px;
+  }
+  table{ width:100%; border-collapse:collapse; font-size:11px; }
+  th, td{ text-align:left; padding:3px 5px; vertical-align:top; }
+  th{
+    font-family:'IBM Plex Mono', monospace; font-size:9px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--ink-soft); border-bottom:1px solid var(--line);
+  }
+  td{ border-bottom:1px solid var(--line); }
+  tr:last-child td{ border-bottom:none; }
+  td.us{ color:var(--us); font-weight:600; }
+  td.them{ color:var(--them); font-weight:600; }
+  .pricing-note{
+    background:var(--them-soft); border-left:3px solid var(--them); padding:6px 8px;
+    font-size:10.5px; margin-top:5px; border-radius:0 6px 6px 0;
+  }
+  .segment{ margin-bottom:5px; font-size:11px; }
+  .segment:last-child{ margin-bottom:0; }
+  .segment strong{ display:block; margin-bottom:2px; }
+  .segment.us strong{ color:var(--us); }
+  .segment.them strong{ color:var(--them); }
+  .objection{
+    border:1px solid var(--line); border-radius:8px; padding:6px 8px; margin-bottom:5px; break-inside:avoid;
+  }
+  .objection:last-child{ margin-bottom:0; }
+  .objection .q{ font-weight:600; font-size:11.5px; margin:0 0 3px; }
+  .objection .q::before{ content:"\201C"; color:var(--them); }
+  .objection .q::after{ content:"\201D"; color:var(--them); }
+  .objection .a{ margin:0; font-size:11px; color:var(--ink); padding-left:12px; border-left:2px solid var(--us); }
+  .traps{ margin:0; padding-left:0; list-style:none; }
+  .traps li{ font-size:11px; padding:3px 0 3px 16px; position:relative; border-bottom:1px dashed var(--line); }
+  .traps li:last-child{ border-bottom:none; }
+  .traps li::before{
+    content:"?"; position:absolute; left:0; top:5px; font-family:'IBM Plex Mono', monospace;
+    font-weight:600; color:var(--us);
+  }
+  .quote{
+    border-left:2px solid var(--line); padding-left:10px; margin-bottom:5px; font-size:11px;
+  }
+  .quote:last-child{ margin-bottom:0; }
+  .quote p{ margin:0 0 3px; font-style:italic; }
+  .quote .source{ font-size:9px; color:var(--ink-soft); font-style:normal; }
+  .proof{ font-size:11px; margin-bottom:4px; padding-left:14px; position:relative; }
+  .proof:last-child{ margin-bottom:0; }
+  .proof::before{ content:"\2022"; position:absolute; left:0; color:var(--us); font-weight:700; }
+  .placeholder{
+    font-size:10.5px; font-style:italic; color:var(--ink-soft); border:1px dashed var(--line);
+    border-radius:6px; padding:8px 10px; margin-top:6px;
+  }
+  .resources-grid{ display:flex; flex-direction:column; gap:6px; }
+  .resources-grid a{
+    font-size:10.5px; color:var(--ink); text-decoration:none; font-weight:600;
+  }
+  .resources-grid a:hover{ text-decoration:underline; }
+  footer{
+    padding:6px 20px 8px; font-family:'IBM Plex Mono', monospace; font-size:9px; color:var(--ink-soft);
+    display:flex; justify-content:space-between; border-top:1px solid var(--line); margin-top:0;
+  }
+  @media (max-width:900px){
+    .body-grid{ grid-template-columns:1fr; margin:10px 16px 0; }
+    .snapshot{ grid-template-columns:1fr; margin:8px 16px 0; }
+    header{ padding:10px 16px 10px; }
+    .tab{ margin-left:16px; }
+    footer{ padding:9px 16px 12px; }
+    .header-row2{ align-items:flex-start; }
+  }
+  @media print{
+    body{ background:#fff; font-size:9px; }
+    .sheet{ margin:0; border:none; width:auto; max-width:none; min-height:0; }
+    .print-btn{ display:none; }
+    .resources-grid{ gap:4px; }
+    .resources-grid a{ font-size:8px; }
+    .tab{ padding:3px 12px 4px; font-size:8px; }
+    header{ padding:6px 22px 4px; }
+    .header-row2{ margin-top:4px; }
+    h1{ font-size:16px; margin:0; }
+    .company-meta{ gap:16px; }
+    .company-meta .col{ font-size:8px; }
+    .company-meta .col strong{ font-size:9px; }
+    .legend{ font-size:8px; gap:8px; }
+    .dot{ width:7px; height:7px; }
+    .snapshot{ margin:5px 22px 0; padding:6px 0; }
+    .snapshot .item{ padding:0 10px; }
+    .snapshot .item .eyebrow{ font-size:7.5px; margin-bottom:2px; }
+    .snapshot .item p{ font-size:9px; }
+    .body-grid{ margin:6px 22px 0; gap:10px; }
+    .block{ padding:6px 8px; margin-bottom:6px; break-inside:avoid; }
+    .eyebrow-h{ font-size:8px; margin-bottom:4px; }
+    table{ font-size:8.5px; }
+    th, td{ padding:2px 4px; }
+    .pricing-note{ padding:5px 6px; font-size:8px; margin-top:5px; }
+    .segment{ font-size:8.5px; margin-bottom:5px; }
+    .objection{ padding:5px 7px; margin-bottom:4px; }
+    .objection .q{ font-size:9px; margin-bottom:2px; }
+    .objection .a{ font-size:8.5px; padding-left:8px; }
+    .traps li{ font-size:8.5px; padding:3px 0 3px 14px; }
+    .proof{ font-size:8.5px; margin-bottom:4px; }
+    .quote{ font-size:8.5px; margin-bottom:5px; padding-left:8px; }
+    .quote .source{ font-size:7px; }
+    .placeholder{ font-size:8px; padding:5px 6px; margin-top:4px; }
+    footer{ padding:5px 22px 6px; margin-top:5px; font-size:7.5px; }
+    @page{ size:A4 landscape; margin:6mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tab">Battlecard · Rev 1</div>
+<div class="sheet">
+
+  <header>
+    <div class="header-row1">
+      <h1>[Your Company] <span class="vs">vs.</span> <span class="them">[Competitor]</span></h1>
+      <button class="print-btn" onclick="window.print()">Print / Save PDF (A4 landscape)</button>
+    </div>
+    <div class="header-row2">
+      <div class="company-meta">
+        <div class="col us-label">
+          <strong>[Your Company]</strong>
+          [City, Country] &middot; founded [YYYY] &middot; [public/private]
+        </div>
+        <div class="col them-label">
+          <strong>[Competitor]</strong>
+          [City, Country] &middot; founded [YYYY] &middot; [public/private]
+        </div>
+      </div>
+      <div class="legend">
+        <span><span class="dot us"></span> Advantage: [Your Company]</span>
+        <span><span class="dot them"></span> Advantage: [Competitor]</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="snapshot">
+    <div class="item neutral">
+      <span class="eyebrow">Who they are</span>
+      <p>[One sentence, clear and straightforward — who the competitor is and what they do.]</p>
+    </div>
+    <div class="item them">
+      <span class="eyebrow">Why they win</span>
+      <p>[The scenario where they're truly the better choice. Say it honestly.]</p>
+    </div>
+    <div class="item us">
+      <span class="eyebrow">Why we win</span>
+      <p>[The scenario where you win, stated as a fact, not a criticism.]</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div>
+      <div class="block">
+        <p class="eyebrow-h">Positioning</p>
+        <table>
+          <tr><th></th><th>[Your Company]</th><th>[Competitor]</th></tr>
+          <tr><td>Category claim</td><td>[Your category claim]</td><td>[Their category claim]</td></tr>
+          <tr><td>Primary buyer</td><td>[Your primary buyer]</td><td>[Their primary buyer]</td></tr>
+          <tr><td>Core promise</td><td>[Your core promise]</td><td>[Their core promise]</td></tr>
+        </table>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Pricing (as of [Month Year])</p>
+        <table>
+          <tr><th>Tier</th><th>[Your Company]</th><th>[Competitor]</th></tr>
+          <tr><td>Entry</td><td>[Price]</td><td>[Price]</td></tr>
+          <tr><td>Enterprise</td><td>[Price]</td><td>[Price]</td></tr>
+          <tr><td>Growth model</td><td>[How pricing scales]</td><td>[How pricing scales]</td></tr>
+        </table>
+        <div class="pricing-note">[Optional: a pricing trap or friction point worth flagging — not just the listed price.]</div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Where they win / where you win</p>
+        <div class="segment us">
+          <strong>[Your Company] wins</strong>
+          <span>[Use case, buyer persona, or company size where you're the better fit.]</span>
+        </div>
+        <div class="segment them">
+          <strong>[Competitor] wins</strong>
+          <span>[Use case, buyer persona, or company size where they're the better fit.]</span>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Company &amp; funding context</p>
+        <div class="segment">
+          <strong>[Competitor]</strong>
+          <span>[Only include if it changes what a rep should say or do: recent funding, leadership change, layoffs, acquisition. Otherwise: "Nothing notable."]</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block">
+        <p class="eyebrow-h">Capability comparison</p>
+        <table>
+          <tr><th>Capability</th><th>[Your Company]</th><th>[Competitor]</th></tr>
+          <tr><td>[Capability 1]</td><td>[What you do]</td><td>[What they do]</td></tr>
+          <tr><td>[Capability 2]</td><td>[What you do]</td><td>[What they do]</td></tr>
+          <tr><td>[Capability 3]</td><td>[What you do]</td><td>[What they do]</td></tr>
+          <tr><td>[Capability 4]</td><td>[What you do]</td><td>[What they do]</td></tr>
+        </table>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Proof points &amp; quotes</p>
+        <div class="quote">
+          <p>[A stat, fact, or short quote that supports your side — under 15 words if quoting directly.]</p>
+          <span class="source">&mdash; [Source name], checked [date]</span>
+        </div>
+        <div class="quote">
+          <p>[A second proof point.]</p>
+          <span class="source">&mdash; [Source name], checked [date]</span>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Customer references (public)</p>
+        <div class="proof"><strong>[Your Company]</strong>: [Publicly citable customer names.]</div>
+        <div class="proof"><strong>[Competitor]</strong>: [Publicly citable customer names, if relevant.]</div>
+        <div class="placeholder">Recent wins / losses: add your own deal-level data here &mdash; not public information, don't invent it.</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block">
+        <p class="eyebrow-h">Questions to ask</p>
+        <ul class="traps">
+          <li>[Discovery question that surfaces a known competitor weak point, without naming them.]</li>
+          <li>[Second discovery question.]</li>
+          <li>[Third discovery question.]</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Objection handling</p>
+        <div class="objection">
+          <p class="q">[Real phrase a prospect would say.]</p>
+          <p class="a">[Short, honest response a rep can say out loud without sounding defensive.]</p>
+        </div>
+        <div class="objection">
+          <p class="q">[Second objection.]</p>
+          <p class="a">[Response.]</p>
+        </div>
+        <div class="objection">
+          <p class="q">[Third objection.]</p>
+          <p class="a">[Response.]</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Additional resources</p>
+        <div class="resources-grid">
+          <a href="#" target="_blank" rel="noopener">[G2/Capterra comparison &rarr;]</a>
+          <a href="#" target="_blank" rel="noopener">[Official pricing page &rarr;]</a>
+          <a href="#" target="_blank" rel="noopener">[Internal competitive intel folder &rarr;]</a>
+        </div>
+        <div class="placeholder" style="margin-top:5px;">Add your own: win/loss call recordings, a customer story doc, or anything else useful for reps.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>[Your Company] Battle Card &mdash; built with the Battlecard Generator framework</span>
+    <span>Owner: <strong>[Name/Team]</strong> &middot; Last updated: <strong>[Date]</strong> &middot; Next review: <strong>[Date]</strong></span>
+  </footer>
+
+</div>
+</body>
+</html>
