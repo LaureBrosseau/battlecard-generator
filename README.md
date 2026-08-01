@@ -9,7 +9,7 @@ That's exactly what battle cards are for. They turn competitive intelligence tha
 **Leverage this framework and AI prompts to turn raw competitive data into a sales-ready battle card in a few minutes.**
 
 <p align="center"><br>
-<img src="./readme-screenshot.png" width="80%"> <br>
+<img src="./assets/screenshot-databricks-snowflake.png" width="80%"> <br>
 <em>Example of a battle card created with the Battle card Generator<br>
 </em>
 </p>
@@ -32,8 +32,8 @@ So here's what you'll find in this repo: a repeatable structure, ready-to-use pr
 |---|---|
 | [`framework.md`](./framework.md) | The battle card structure itself, the 10 sections every battle card should have, and why |
 | [`prompts.md`](./prompts.md) | Two ready-to-use prompts for Claude/ChatGPT: 1st one turns raw research (pricing pages, reviews, call notes) into a battle card following my framework, 2nd one formats the battle card into a HTML template. |
-| [`battlecard-shopify-vs-bigcommerce.html`](./battlecard-shopify-vs-bigcommerce.html) | Mid-market example (Shopify vs BigCommerce): download the file and open it with your browser to see the render |
-| [`battlecard-databricks-vs-snowflake.html`](./battlecard-databricks-vs-snowflake.html) | Enterprise example (Databricks vs Snowflake): download the file and open it with your browser to see the render |
+| [`battlecard-shopify-vs-bigcommerce.html`](./examples/battlecard-shopify-vs-bigcommerce.html) | Mid-market example (Shopify vs BigCommerce): download the file and open it with your browser to see the render |
+| [`battlecard-databricks-vs-snowflake.html`](./examples/battlecard-databricks-vs-snowflake.html) | Enterprise example (Databricks vs Snowflake): download the file and open it with your browser to see the render |
 | [`battlecard-template.html`](./battlecard-template.html) | A printable one-pager format sales can keep open during a call. It's a plain HTML/CSS file, you can edit it freely: colors, layout, or content, in any text editor, or paste the file into Claude (or another AI assistant) and ask it to make the changes for you  |
 
 ## How to use it
