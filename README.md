@@ -46,10 +46,13 @@ So here's what you'll find in this repo: a battle card framework, ready-to-use p
 4. Once finalized, run it by a sales rep who knows well this specific competitor, they'll help validate the content and tell you if they'd phrase something differently on a call. If so, ask why, and revise your battle card based on their answer.
 5. Set a recurring reminder (monthly, or triggered by a competitor product update) to refresh it, an outdated battle card is worse than no battle card.
 
-## Why this approach
+## Why I built this
 
-At Akeneo, I owned competitive intelligence for all our offers and segments. I built the 1st battle cards, competitive landscapes and ran enablement sessions with the GTM teams.  
-Sales reps need concrete arguments, not marketing fluff, to have conversations with the prospects about the competition. The framework reflects what sales actually need, not what looks good in a slide deck.
+I love digging up data on competitors, and turning that into intelligence sales reps can actually use in a deal.
+
+That's exactly what I did at Akeneo: I combined online research with field intel from sales rep interviews and CRM data to build competitor decks, the first battle cards, and competitive landscapes, then ran enablement sessions with GTM teams.
+
+From my experience, I know that sales reps need concrete arguments and not marketing fluff when competition comes up with a prospect. This framework reflects what sales actually need, not what looks good in a slide deck.
 
 ## About me
 
