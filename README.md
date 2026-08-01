@@ -1,30 +1,32 @@
 # Battle Card Generator
 
-It's not enough to know who you're up against, the rep on the call needs the right content in hand.  
+Knowing who you're up against in a deal is not enough. The rep on the call needs the right content in hand.
 
-You do not want Sales to lose deals to competitors because they didn't know how to respond or what to say when the competitor's name or arguments came up in a conversation with a prospect. 
+Too many deals are lost because a sales rep didn't know how to respond when a competitor's name or argument came up with a prospect.
 
-That's exactly what battle cards are for. They turn competitive intelligence that usually exists somewhere, in a Product Marketing Manager's head, in a sales rep's memory of a tough prospect call, in an old Slack thread, but rarely anywhere a sales rep can actually access it live.
+Battle cards fix that: short, easy-to-use content reps can pull up mid-call. They turn competitive intelligence that's scattered across a PMM's head, a rep's memory, or a Slack thread into something actionable. 
 
 **Leverage this framework and AI prompts to turn raw competitive data into a sales-ready battle card in a few minutes.**
 
+For Product Marketers, Sales, and anyone who owns competitive intelligence and needs a battle card that actually gets used.
+
 <p align="center"><br>
 <img src="./assets/screenshot-databricks-snowflake.png" width="80%"> <br>
-<em>Example of a battle card created with the Battle Card Generator<br>
+<em>Example of a battle card created with the battle card generator<br>
 </em>
 </p>
 
 
 ## The problem
 
-But many competitive battle cards are ineffective for the same reasons:  
-- They're built once and barely updated, so sales stop using them.
+Many competitive battle cards are ineffective because:  
+- They're built once and never updated, so sales stop using them.
 - They're too long, too exhaustive, thus not usable in real-life situations.
 - They often tell sales reps *what* the competitor does, but not *what to say* or *how to answer* against specific arguments.
 
-A good battle card is short, straight to the point, and accessible. It helps the sales rep quickly understand the ins and outs of a specific competitor.  
+A good battle card is short, straight to the point, and easy to access. It helps the sales rep quickly understand the ins and outs of a specific competitor.  
 
-So here's what you'll find in this repo: a repeatable structure, ready-to-use prompts, and battle card examples, so anyone in Product Marketing can go from scattered competitor notes to a usable battle card fast, with or without AI.
+So here's what you'll find in this repo: a battle card framework, ready-to-use prompts, and battle card real-life examples.  
 
 ## What's in this repo
 
@@ -52,4 +54,4 @@ Sales reps need concrete arguments, not marketing fluff, to have conversations w
 ## About me
 
 I'm Laure, a Product Marketing and Strategic Projects leader exploring how AI can make Product Marketing Managers work faster while keeping the quality bar high.  
-More at [laurebrosseau.com](https://laurebrosseau.com). [Connect on LinkedIn](https://www.linkedin.com/in/laurebrosseau/).
+More at [laurebrosseau.com](https://laurebrosseau.com) or [connect on LinkedIn](https://www.linkedin.com/in/laurebrosseau/).
