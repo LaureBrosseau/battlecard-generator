@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battlecard — Shopify vs. BigCommerce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7F5;
+    --card:#FFFFFF;
+    --ink:#14171A;
+    --ink-soft:#5B6169;
+    --us:#15803D;
+    --us-soft:#E7F4EC;
+    --them:#C2410C;
+    --them-soft:#FBEBE2;
+    --line:#E2E5E1;
+    --radius:10px;
+    --accent:#FDBE04;
+    --accent-soft:#FFF6DC;
+  }
+  *{ box-sizing:border-box; }
+  html, body{ height:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif; font-size:12.5px; line-height:1.4;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    width:100%; max-width:1500px; min-height:210mm; margin:0 auto;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; display:flex; flex-direction:column;
+  }
+  header{ padding:8px 20px 5px; }
+  .header-row1{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .header-row2{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:5px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif; font-size:22px; font-weight:700;
+    margin:2px 0 0; letter-spacing:-0.01em;
+  }
+  h1 .vs{ color:var(--ink-soft); font-weight:500; }
+  h1 .them{ color:var(--ink); }
+  .company-meta{ display:flex; gap:22px; }
+  .company-meta .col{ font-size:10px; font-family:'IBM Plex Mono', monospace; color:var(--ink-soft); }
+  .company-meta .col strong{ display:block; color:var(--ink); font-size:11px; margin-bottom:1px; font-family:'IBM Plex Sans', sans-serif; }
+  .company-meta .col.us-label strong{ color:var(--ink); }
+  .company-meta .col.them-label strong{ color:var(--ink); }
+  .print-btn{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600; letter-spacing:.04em;
+    text-transform:uppercase; background:var(--accent); color:var(--ink); border:none;
+    padding:7px 12px; border-radius:6px; cursor:pointer;
+  }
+  .print-btn:hover{ opacity:.9; }
+  .legend{ display:flex; gap:12px; font-size:9.5px; font-family:'IBM Plex Mono', monospace; }
+  .legend span{ display:flex; align-items:center; gap:5px; }
+  .dot{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+  .dot.us{ background:var(--us); }
+  .dot.them{ background:var(--them); }
+  .snapshot{
+    margin:6px 20px 0; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:8px 0; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;
+  }
+  .snapshot .item{ padding:0 14px; position:relative; }
+  .snapshot .item + .item::before{
+    content:""; position:absolute; left:-5px; top:0; bottom:0; width:1px; background:var(--line);
+  }
+  .snapshot .item .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:9px; font-weight:600; letter-spacing:.08em;
+    text-transform:uppercase; margin-bottom:4px; display:block;
+  }
+  .snapshot .item.neutral .eyebrow{ color:var(--ink-soft); }
+  .snapshot .item.them .eyebrow{ color:var(--them); }
+  .snapshot .item.us .eyebrow{ color:var(--us); }
+  .snapshot .item p{ margin:0; font-size:11.5px; }
+
+  /* --- 3-column layout, each section is its own bordered block --- */
+  .body-grid{
+    flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;
+    margin:6px 20px 0;
+  }
+  .block{
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:8px 10px; margin-bottom:8px; background:var(--card);
+  }
+  .eyebrow-h{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 5px;
+  }
+  table{ width:100%; border-collapse:collapse; font-size:11px; }
+  th, td{ text-align:left; padding:3px 5px; vertical-align:top; }
+  th{
+    font-family:'IBM Plex Mono', monospace; font-size:9px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--ink-soft); border-bottom:1px solid var(--line);
+  }
+  td{ border-bottom:1px solid var(--line); }
+  tr:last-child td{ border-bottom:none; }
+  td.us{ color:var(--us); font-weight:600; }
+  td.them{ color:var(--them); font-weight:600; }
+  .pricing-note{
+    background:var(--accent-soft); border-left:3px solid var(--accent); padding:6px 8px;
+    font-size:10.5px; margin-top:5px; border-radius:0 6px 6px 0;
+  }
+  .segment{ margin-bottom:5px; font-size:11px; }
+  .segment:last-child{ margin-bottom:0; }
+  .segment strong{ display:block; margin-bottom:2px; }
+  .segment.us strong{ color:var(--us); }
+  .segment.them strong{ color:var(--them); }
+  .objection{
+    border:1px solid var(--line); border-radius:8px; padding:6px 8px; margin-bottom:5px; break-inside:avoid;
+  }
+  .objection:last-child{ margin-bottom:0; }
+  .objection .q{ font-weight:600; font-size:11.5px; margin:0 0 3px; }
+  .objection .q::before{ content:"\201C"; color:var(--accent); }
+  .objection .q::after{ content:"\201D"; color:var(--accent); }
+  .objection .a{ margin:0; font-size:11px; color:var(--ink); padding-left:12px; border-left:2px solid var(--accent); }
+  .traps{ margin:0; padding-left:0; list-style:none; }
+  .traps li{ font-size:11px; padding:3px 0 3px 16px; position:relative; border-bottom:1px dashed var(--line); }
+  .traps li:last-child{ border-bottom:none; }
+  .traps li::before{
+    content:"?"; position:absolute; left:0; top:5px; font-family:'IBM Plex Mono', monospace;
+    font-weight:600; color:var(--accent);
+  }
+  .quote{
+    border-left:2px solid var(--line); padding-left:10px; margin-bottom:5px; font-size:11px;
+  }
+  .quote:last-child{ margin-bottom:0; }
+  .quote p{ margin:0 0 3px; font-style:italic; }
+  .quote .source{ font-size:9px; color:var(--ink-soft); font-style:normal; }
+  .proof{ font-size:11px; margin-bottom:4px; padding-left:14px; position:relative; }
+  .proof:last-child{ margin-bottom:0; }
+  .proof::before{ content:"\2022"; position:absolute; left:0; color:var(--accent); font-weight:700; }
+  .placeholder{
+    font-size:10.5px; font-style:italic; color:var(--ink-soft); border:1px dashed var(--line);
+    border-radius:6px; padding:8px 10px; margin-top:6px;
+  }
+  .resources-grid{ display:flex; flex-direction:column; gap:6px; }
+  .resources-grid a{
+    font-size:10.5px; color:var(--ink); text-decoration:none; font-weight:600;
+  }
+  .resources-grid a:hover{ text-decoration:underline; }
+  footer{
+    padding:6px 20px 8px; font-family:'IBM Plex Mono', monospace; font-size:9px; color:var(--ink-soft);
+    display:flex; justify-content:space-between; border-top:1px solid var(--line); margin-top:0;
+  }
+  footer .brand{ color:var(--ink); }
+  footer .brand strong{ color:var(--ink); font-weight:600; }
+  footer .brand .accent-dot{
+    display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent);
+    margin-right:5px;
+  }
+  @media screen and (max-width:900px){
+    .body-grid{ grid-template-columns:1fr; margin:10px 16px 0; }
+    .snapshot{ grid-template-columns:1fr; margin:8px 16px 0; }
+    header{ padding:10px 16px 10px; }
+    footer{ padding:9px 16px 12px; }
+    .header-row2{ align-items:flex-start; }
+  }
+  @media print{
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+    body{ background:#fff; font-size:9px; }
+    .sheet{ margin:0; border:none; width:auto; max-width:none; min-height:0; }
+    .body-grid{ grid-template-columns:1fr 1fr 1fr !important; }
+    .snapshot{ grid-template-columns:1fr 1fr 1fr !important; }
+    .print-btn{ display:none; }
+    .resources-grid{ gap:4px; }
+    .resources-grid a{ font-size:8px; }
+    header{ padding:6px 22px 4px; }
+    .header-row2{ margin-top:4px; }
+    h1{ font-size:16px; margin:0; }
+    .company-meta{ gap:16px; }
+    .company-meta .col{ font-size:8px; }
+    .company-meta .col strong{ font-size:9px; }
+    .legend{ font-size:8px; gap:8px; }
+    .dot{ width:7px; height:7px; }
+    .snapshot{ margin:5px 22px 0; padding:6px 0; }
+    .snapshot .item{ padding:0 10px; }
+    .snapshot .item .eyebrow{ font-size:7.5px; margin-bottom:2px; }
+    .snapshot .item p{ font-size:9px; }
+    .body-grid{ margin:6px 22px 0; gap:10px; }
+    .block{ padding:6px 8px; margin-bottom:6px; break-inside:avoid; }
+    .eyebrow-h{ font-size:8px; margin-bottom:4px; }
+    table{ font-size:8.5px; }
+    th, td{ padding:2px 4px; }
+    .pricing-note{ padding:5px 6px; font-size:8px; margin-top:5px; }
+    .segment{ font-size:8.5px; margin-bottom:5px; }
+    .objection{ padding:5px 7px; margin-bottom:4px; }
+    .objection .q{ font-size:9px; margin-bottom:2px; }
+    .objection .a{ font-size:8.5px; padding-left:8px; }
+    .traps li{ font-size:8.5px; padding:3px 0 3px 14px; }
+    .proof{ font-size:8.5px; margin-bottom:4px; }
+    .quote{ font-size:8.5px; margin-bottom:5px; padding-left:8px; }
+    .quote .source{ font-size:7px; }
+    .placeholder{ font-size:8px; padding:5px 6px; margin-top:4px; }
+    footer{ padding:5px 22px 6px; margin-top:5px; font-size:7.5px; }
+    @page{ size:A4 landscape; margin:6mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header>
+    <div class="header-row1">
+      <h1>Shopify <span class="vs">vs.</span> <span class="them">BigCommerce</span></h1>
+      <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+    <div class="header-row2">
+      <div class="company-meta">
+        <div class="col us-label">
+          <strong>Shopify</strong>
+          Ottawa, Canada &middot; founded 2006 &middot; public (NYSE)
+        </div>
+        <div class="col them-label">
+          <strong>BigCommerce</strong>
+          Austin, USA &middot; founded 2009 &middot; private (Apax/GIC, Nov 2024)
+        </div>
+      </div>
+      <div class="legend">
+        <span><span class="dot us"></span> Opportunity</span>
+        <span><span class="dot them"></span> Threat</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="snapshot">
+    <div class="item neutral">
+      <span class="eyebrow">Who they are</span>
+      <p>A hosted e-commerce platform built for fast, DTC-first launches, with the largest app and theme ecosystem in the category.</p>
+    </div>
+    <div class="item them">
+      <span class="eyebrow">Why they win</span>
+      <p>Merchants scaling complex B2B or hybrid B2B/B2C operations with large, variant-heavy catalogs, or wanting to avoid Shopify's GMV-based plan structure.</p>
+    </div>
+    <div class="item us">
+      <span class="eyebrow">Why we win</span>
+      <p>DTC-first brands who value the largest app ecosystem, fastest time-to-launch, and Shopify Payments' integrated checkout.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div>
+      <div class="block">
+        <p class="eyebrow-h">Positioning</p>
+        <table>
+          <tr><th></th><th>Shopify</th><th>BigCommerce</th></tr>
+          <tr><td>Category claim</td><td>Category-leading commerce platform</td><td>"Open SaaS" for complex commerce</td></tr>
+          <tr><td>Primary buyer</td><td>DTC brands, all sizes</td><td>Mid-market &amp; B2B-heavy enterprise</td></tr>
+          <tr><td>Core promise</td><td>Launch fast, scale with the largest ecosystem</td><td>Handle complex B2B/catalog needs without enterprise fees</td></tr>
+        </table>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Pricing (as of mid-2026)</p>
+        <table>
+          <tr><th>Tier</th><th>Shopify</th><th>BigCommerce</th></tr>
+          <tr><td>Entry</td><td>$19&ndash;27/mo</td><td>$29&ndash;39/mo</td></tr>
+          <tr><td>Plus / Enterprise</td><td>~$2,300/mo (3-yr term)</td><td class="them">~$1,500&ndash;1,750/mo</td></tr>
+          <tr><td>Growth model</td><td>Transaction fees off-platform gateway</td><td>Revenue (GMV) caps force upgrades</td></tr>
+        </table>
+        <div class="pricing-note">Both platforms reworked pricing in 2026 and are now close in headline cost. BigCommerce's GMV caps were tightened in June 2026 &mdash; a real switching trigger to probe for.</div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Where they win / where you win</p>
+        <div class="segment us">
+          <strong>Shopify wins</strong>
+          <span>DTC-first, wants the largest app/theme ecosystem, fast launch.</span>
+        </div>
+        <div class="segment them">
+          <strong>BigCommerce wins</strong>
+          <span>Primary business is B2B/wholesale, large complex catalogs (600+ SKU variants), wants to avoid GMV-tied plan upgrades.</span>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Company &amp; funding context</p>
+        <div class="segment">
+          <strong>BigCommerce</strong>
+          <span>Taken private by Apax Partners &amp; GIC (Nov 2024, ~$1.8B). June 2026: GMV caps tightened 40&ndash;44%, new payment provider fee added &mdash; a real switching trigger, and a sign of pressure to protect margin post-buyout.</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block">
+        <p class="eyebrow-h">Capability comparison</p>
+        <table>
+          <tr><th>Capability</th><th>Shopify</th><th>BigCommerce</th></tr>
+          <tr><td>Max SKU variants/product</td><td>100</td><td class="them">600</td></tr>
+          <tr><td>Native B2B (quotes, price lists)</td><td>Improved on Plus (2024+)</td><td class="them">Deeper, native since inception</td></tr>
+          <tr><td>App/theme ecosystem</td><td class="us">~8,000 apps, largest in category</td><td>Smaller marketplace</td></tr>
+          <tr><td>Native multichannel selling</td><td class="us">Google, Meta, Amazon, TikTok</td><td>Native Google/Meta discontinued Mar 2026</td></tr>
+          <tr><td>Headless framework</td><td>Hydrogen (Remix)</td><td>Catalyst (Next.js, open-source)</td></tr>
+        </table>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Proof points &amp; quotes</p>
+        <div class="quote">
+          <p>Shopify: 4.4/5 across 5,006 reviews. BigCommerce: 4.2/5 across 574 reviews.</p>
+          <span class="source">&mdash; G2.com, "Compare BigCommerce and Shopify", checked 31 Jul 2026</span>
+        </div>
+        <div class="quote">
+          <p>"Shopify excels in user experience, with many praising its intuitive interface."</p>
+          <span class="source">&mdash; G2 AI-generated review summary (aggregated from verified user reviews), checked 31 Jul 2026</span>
+        </div>
+        <div class="quote">
+          <p>Independent testing found Shopify's onboarding polished and its admin dashboard cleaner &mdash; a first-impression edge in head-to-head testing.</p>
+          <span class="source">&mdash; ToolStackReview, "Shopify vs BigCommerce 2026", 18 May 2026</span>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Customer references (public)</p>
+        <div class="proof"><strong>Shopify Plus</strong>: Gymshark, Allbirds, Heinz.</div>
+        <div class="proof"><strong>BigCommerce</strong>: BMW, Mizuno, Hanna Instruments, Coco Republic.</div>
+        <div class="placeholder">Recent wins / losses: add your own deal-level data here &mdash; not public information, don't invent it.</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block">
+        <p class="eyebrow-h">Questions to ask</p>
+        <ul class="traps">
+          <li>Is wholesale/B2B a primary revenue stream, or a secondary add-on to DTC?</li>
+          <li>How many SKU variants does your largest product line need?</li>
+          <li>Are you using a payment gateway outside Shop Pay / Shopify Payments today?</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Objection handling</p>
+        <div class="objection">
+          <p class="q">BigCommerce doesn't cap our revenue the way Shopify's plan tiers do.</p>
+          <p class="a">Worth checking their current GMV thresholds directly &mdash; they were tightened in June 2026, and orders outside their embedded gateway now carry an added fee. The "no cap" pitch isn't as clean as it used to be.</p>
+        </div>
+        <div class="objection">
+          <p class="q">We need deep native B2B and BigCommerce has it built in.</p>
+          <p class="a">Fair &mdash; if B2B is your primary business, that's a genuine BigCommerce strength. If it's a secondary channel alongside DTC, Shopify's B2B for All (shipped 2024) now covers most of that ground natively.</p>
+        </div>
+        <div class="objection">
+          <p class="q">Their enterprise tier is cheaper than Shopify Plus.</p>
+          <p class="a">On headline price, sometimes &mdash; but compare total cost of ownership, not sticker price: app costs, gateway fees, and now BigCommerce's revenue-tied fee changes all move the real number.</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="eyebrow-h">Additional resources</p>
+        <div class="resources-grid">
+          <a href="https://www.g2.com/compare/bigcommerce-vs-shopify" target="_blank" rel="noopener">G2 side-by-side reviews &rarr;</a>
+          <a href="https://www.shopify.com/pricing" target="_blank" rel="noopener">Official pricing: Shopify &rarr;</a>
+          <a href="https://www.bigcommerce.com/pricing/" target="_blank" rel="noopener">Official pricing: BigCommerce &rarr;</a>
+        </div>
+        <div class="placeholder" style="margin-top:5px;">Add your own: internal competitive intel folder, win/loss recordings, or a customer story doc.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="brand"><span class="accent-dot"></span>Illustrative example built for the Battlecard Generator framework &mdash; laurebrosseau.com</span>
+    <span>Owner: <strong>Product Marketing</strong> &middot; Last updated: <strong>31 Jul 2026</strong> &middot; Next review: <strong>Oct 2026</strong></span>
+  </footer>
+
+</div>
+</body>
+</html>
