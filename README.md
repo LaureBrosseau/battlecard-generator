@@ -10,7 +10,7 @@ That's exactly what battle cards are for. They turn competitive intelligence tha
 
 <p align="center"><br>
 <img src="./assets/screenshot-databricks-snowflake.png" width="80%"> <br>
-<em>Example of a battle card created with the Battle card Generator<br>
+<em>Example of a battle card created with the Battle Card Generator<br>
 </em>
 </p>
 
