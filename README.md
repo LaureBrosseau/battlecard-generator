@@ -11,7 +11,7 @@ Battle cards fix that: short, easy-to-use content reps can pull up mid-call. The
 For Product Marketers, Sales, and anyone who owns competitive intelligence and needs a battle card that actually gets used.
 
 <p align="center"><br>
-<img src="./assets/screenshot-databricks-snowflake.png" width="80%"> <br>
+<img src="./assets/screenshot-databricks-snowflake.png"> <br>
 <em>Example of a battle card created with the battle card generator<br>
 </em>
 </p>
