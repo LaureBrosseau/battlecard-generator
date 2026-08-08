@@ -115,5 +115,6 @@ Once you have the battle card formatted, check the content (if not done yet) and
 
 - **The quality of the battle card depends on the quality of your raw data.** Ten minutes on G2 reading actual customer complaints beats an hour of the model guessing from a category description.
 - **Include call notes if you have any.** Real objections your reps have already heard are more valuable than anything on the competitor's own website.
+- **Check all the answers provided under the Objection handling section**. Make sure the answers provided are meaningful and will really help the Sales handle the potential objections.
 - **Re-run it when something changes**: a pricing update, a new feature launch, a funding round. Paste the new information into the same prompt structure rather than starting from scratch.
 - **Never skip the fact-check step.** The instruction to flag gaps helps, but models can still be confidently wrong about specifics like exact pricing tiers, verify anything a rep will say as fact.
