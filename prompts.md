@@ -85,7 +85,7 @@ Then once the content is ready, use the second prompt below.
 
 ## Prompt 2: Turning your content into the HTML one-pager
 
-This prompt will format your battle card content into a printable HTML template (battlecard-template.html). This content can be used on Canva or Notion.
+This prompt will format your battle card content into a printable HTML template [`battlecard-template.html`](./battlecard-template.html) or [`battlecard-template.md`](./battlecard-template.md) if to use the content on Canva or Notion.
 
 Here's the prompt:
 
@@ -97,8 +97,8 @@ If my content doesn't fit a section cleanly (too long, missing information, extr
 ## My battle card content
 [Paste your finished, fact-checked battle card here]
 
-## The HTML template
-[Paste the full contents of battlecard-template.html here]
+## The HTML template (or MD template)
+[Paste the full contents of battlecard-template.html or battlecard-template.md here]
 
 ```
 
